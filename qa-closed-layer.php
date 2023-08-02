@@ -49,7 +49,7 @@ require_once QA_INCLUDE_DIR.'qa-theme-base.php';
 				if (!qa_is_logged_in()) {
 					if (isset($this->content['navigation']['user']['login']) && !QA_FINAL_EXTERNAL_USERS) {
 						$login=@$this->content['navigation']['user']['login'];
-						if (qa_request_part(0) == 'register') $this->body();					
+						if (qa_request_part(0) == 'register' || qa_request_part(0) == 'forgot' || qa_request_part(0) == 'reset') $this->body();					
 						else $this->qa_closed_page($login);
 						unset($this->content['navigation']['user']['login']);
 					}
